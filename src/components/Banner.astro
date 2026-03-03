@@ -5,7 +5,11 @@ import bannerBg from "@assets/img/banner.webp";
 import brandLogo from "@assets/svg/logo.svg";
 ---
 
-<section class="relative isolate flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden text-white lg:min-h-[calc(100vh-6rem)]">
+<section
+  class="relative isolate
+flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden
+text-white lg:min-h-[calc(100vh-16rem)]"
+>
   <Image
     src={bannerBg}
     alt="Ingredientes naturales sobre una mesa de madera"
@@ -23,12 +27,13 @@ import brandLogo from "@assets/svg/logo.svg";
       loading="eager"
     />
 
-    <p class="mx-auto max-w-4xl text-2xl font-light leading-relaxed md:text-5xl md:leading-[1.35]">
+    <p
+      class="mx-auto mt-2 max-w-6xl text-2xl font-light leading-relaxed md:mt-4 md:text-3xl md:leading-[1.35]"
+    >
       Donde la curiosidad se transforma en inspiración que trasciende
-    </p>
-    <p class="mx-auto mt-2 max-w-5xl text-2xl font-light leading-relaxed md:mt-4 md:text-5xl md:leading-[1.35]">
-      Bienvenido a Monarca Camelia, un espacio donde cada producto nace con
-      intención, cuidado y significado.
+      <br />
+      Bienvenido a Monarca Camelia, un espacio donde cada producto nace con intención,
+      cuidado y significado.
     </p>
   </div>
 </section>
