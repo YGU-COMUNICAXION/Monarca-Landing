@@ -20,6 +20,7 @@ import imgLogo from "@assets/svg/logoHeader.svg";
     <div class="lg:hidden absolute">
       <!-- 3Bars -->
       <svg
+        id="menu-icon"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -35,6 +36,7 @@ import imgLogo from "@assets/svg/logoHeader.svg";
 
       <!-- XMarkIcon -->
       <svg
+        id="close-icon"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -65,7 +67,7 @@ import imgLogo from "@assets/svg/logoHeader.svg";
     <nav
       id="navigator-menu"
       class:list={[
-        "bg-white fixed -top-full left-0 right-0 lg:top-0 lg:left-auto lg:right-auto",
+        "bg-primary fixed -top-full left-0 right-0 lg:top-0 lg:left-auto lg:right-auto",
         "flex flex-col items-center justify-center shadow lg:shadow-none p-6 py-8 lg:p-0 lg:py-0",
         "transition-[top] duration-300 ease-in-out lg:transition-none",
         "lg:static lg:flex-1 lg:flex lg:items-center lg:gap-4 lg:pt-1 lg:bg-transparent",
@@ -83,19 +85,19 @@ import imgLogo from "@assets/svg/logoHeader.svg";
       `}
       >
         <li>
-          <a href={"/"}> Inicio </a>
+          <a href={"#inicio"}> Inicio </a>
         </li>
         <li>
-          <a href={"/nosotros"}> Nosotros </a>
+          <a href={"#nosotros"}> Nosotros </a>
         </li>
         <li>
-          <a href={"/mision"}> Nuestra Misión y Propósito </a>
+          <a href={"#mision"}> Nuestra Misión y Propósito </a>
         </li>
         <li>
-          <a href={"/productos"}> Productos </a>
+          <a href={"#productos"}> Productos </a>
         </li>
         <li>
-          <a href={"/contacto"}> Contáctanos </a>
+          <a href={"#contacto"}> Contáctanos </a>
         </li>
       </ul>
     </nav>
@@ -121,6 +123,7 @@ import imgLogo from "@assets/svg/logoHeader.svg";
     const closeIcon = document.querySelector("#close-icon");
     const navigatorMenu = document.querySelector("#navigator-menu");
     const header = document.querySelector<HTMLElement>("#header");
+    const navLinks = document.querySelectorAll("[data-header-nav] a");
 
     if (!navigatorMenu || !barsIcon || !closeIcon || !header) {
       throw new Error("Element not found");
@@ -140,5 +143,10 @@ import imgLogo from "@assets/svg/logoHeader.svg";
 
     barsIcon.addEventListener("click", () => setMenuOpen(true));
     closeIcon.addEventListener("click", () => setMenuOpen(false));
+
+    // Cerrar menú al hacer clic en un link de navegación
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => setMenuOpen(false));
+    });
   });
 </script>

@@ -17,7 +17,7 @@ const { title = "Volta", description = "", ogImage } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -30,7 +30,7 @@ const { title = "Volta", description = "", ogImage } = Astro.props;
   </head>
   <body class="flex flex-col min-h-screen">
     <Header />
-    <main class="flex-1 pt-16 lg:pt-24 bg-amber-100">
+    <main class="flex-1 pt-16 lg:pt-24">
       <slot />
     </main>
     <Footer />
@@ -43,5 +43,13 @@ const { title = "Volta", description = "", ogImage } = Astro.props;
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  [id] {
+    scroll-margin-top: 30rem;
   }
 </style>
