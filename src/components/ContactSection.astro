@@ -1,0 +1,74 @@
+---
+import { getImage } from "astro:assets";
+import patronLogo from "@assets/svg/PatronLogo.svg";
+
+const optimazatedPattern = await getImage({ src: patronLogo });
+---
+
+<section class="bg-[#f2f2f4] text-background">
+  <div class="container grid px-4 py-14 md:grid-cols-[1.4fr_1fr] md:py-20">
+    <article class="max-w-3xl py-2 md:pr-12">
+      <h2 class="text-4xl font-semibold">Contacto</h2>
+
+      <p class="mt-6 text-xl leading-relaxed md:text-[2rem] md:leading-[1.35]">
+        Si quieres conocer más sobre Monarca Camellia o colaborar con nosotras,
+        ¡contáctanos!
+      </p>
+
+      <ul class="mt-10 space-y-6 text-xl md:text-4xl">
+        <li class="flex items-center gap-4 md:gap-5">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            class="size-8 text-secondary md:size-11"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16.7 13.4c-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.5-2.2-2.9-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3 0-.5 0-.7s-.9-2.2-1.2-3c-.3-.8-.6-.7-.9-.8H3.5c-.3 0-.7.1-1 .5-.3.4-1.3 1.3-1.3 3.2 0 1.9 1.4 3.8 1.6 4.1.2.3 2.7 4.1 6.6 5.7.9.4 1.6.6 2.2.8.9.3 1.8.2 2.4.1.7-.1 2.4-1 2.7-2 .3-1 .3-1.8.2-2 0-.2-.3-.3-.7-.5"
+            ></path>
+            <path d="M20.5 3.5A11 11 0 0 0 4.3 18.8L3 23l4.3-1.3A11 11 0 1 0 20.5 3.5z"></path>
+          </svg>
+          <a class="hover:underline" href="https://wa.me/525579868490" target="_blank" rel="noopener noreferrer">+525579868490</a>
+        </li>
+
+        <li class="flex items-center gap-4 md:gap-5">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            class="size-8 text-primary md:size-11"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-9.2 6.7a1.4 1.4 0 0 1-1.6 0L2 7"></path>
+          </svg>
+          <a class="hover:underline" href="mailto:atencion@monarcacamellia.com">atencion@monarcacamellia.com</a>
+        </li>
+      </ul>
+
+      <div class="mt-12 space-y-4 text-xl leading-relaxed md:text-[2rem]">
+        <h3 class="font-semibold">Atención personalizada</h3>
+        <p><strong>Kerstin Wittig</strong> - kwittig@monarcacamellia.com</p>
+        <p><strong>Maricela Rivera</strong> - maricela.rivera@monarcacamellia.com</p>
+      </div>
+    </article>
+
+    <div class="contact-pattern mt-10 min-h-64 md:mt-0" aria-hidden="true"></div>
+  </div>
+</section>
+
+<style define:vars={{ patternUrl: `url(${optimazatedPattern.src})` }}>
+  .contact-pattern {
+    background-image: var(--patternUrl);
+    background-repeat: repeat;
+    background-size: 7.5rem;
+    background-position: center;
+  }
+</style>
