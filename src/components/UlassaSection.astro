@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+
+import ulassaLogo from "@assets/svg/logoUlassa.svg";
+import teIcon from "@assets/svg/logoTe.svg";
+import tisanaIcon from "@assets/svg/logoTisana.svg";
+import machaIcon from "@assets/svg/logoMacha.svg";
+
+import mezclasTe from "@assets/img/mezclasTe.webp";
+import tisanas from "@assets/img/Tisanas.webp";
+import machas from "@assets/img/machas.webp";
+
+const cards = [
+  {
+    title: "Mezclas de té (blends)",
+    image: mezclasTe,
+    icon: teIcon,
+    iconBg: "bg-[#f3b416]",
+    alt: "Mezclas de té con especias sobre una mesa de madera",
+  },
+  {
+    title: "Tisanas (herbales, frutales y florales)",
+    image: tisanas,
+    icon: tisanaIcon,
+    iconBg: "bg-[#6f4db4]",
+    alt: "Variedad de tisanas coloridas secas",
+  },
+  {
+    title: "Matcha",
+    image: machas,
+    icon: machaIcon,
+    iconBg: "bg-[#65b458]",
+    alt: "Tazones de matcha con polvo sobre una mesa",
+  },
+];
+---
+
+<section class="bg-[#008b69] py-16 text-white md:py-20">
+  <div class="mx-auto w-full max-w-7xl px-6 lg:px-12">
+    <Image
+      src={ulassaLogo}
+      alt="Ulassa"
+      class="mx-auto mb-8 h-auto w-full max-w-[220px] md:mb-12 md:max-w-[280px]"
+      loading="lazy"
+    />
+
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-3xl font-semibold md:text-5xl">Conoce nuestros productos</h2>
+
+      <p class="mt-8 text-lg leading-relaxed md:text-4xl">
+        Monarca Camellia tiene la visión de ofrecer diversas líneas de productos a lo largo del
+        tiempo.
+        <br />
+        Hoy te damos la bienvenida a descubrir <strong>Ulassa</strong>, nuestra primera colección
+        que incluye:
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:mt-14 md:grid-cols-3">
+      {
+        cards.map((card) => (
+          <article class="group relative overflow-hidden rounded-[28px]">
+            <Image
+              src={card.image}
+              alt={card.alt}
+              class="h-[360px] w-full object-cover brightness-75 transition duration-300 group-hover:scale-105"
+              loading="lazy"
+            />
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+              <div class:list={["mb-5 rounded-full p-4", card.iconBg]}>
+                <Image src={card.icon} alt="" class="h-8 w-8" loading="lazy" />
+              </div>
+              <h3 class="text-3xl font-medium leading-snug">{card.title}</h3>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 text-center md:mt-12">
+      <a
+        href="https://www.ulassa.com.mx/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex rounded-full border border-white/80 px-8 py-3 text-sm font-medium tracking-wide text-white transition hover:bg-white hover:text-[#008b69]"
+      >
+        VISITA WWW.ULASSA.COM.MX
+      </a>
+    </div>
+  </div>
+</section>
