@@ -1,0 +1,183 @@
+---
+import { Image, getImage } from "astro:assets";
+
+import logoAlt from "@assets/svg/logo_alt.svg";
+import patronLogo from "@assets/svg/PatronLogo.svg";
+import misionImg from "@assets/img/mision.webp";
+import propositoImg from "@assets/img/proposito.webp";
+import calidadIcon from "@assets/svg/calidad.svg";
+import empatiaIcon from "@assets/svg/empatia.svg";
+
+const optimazatedImage = await getImage({ src: patronLogo });
+---
+
+<section class="bg-white text-background relative">
+  <div class="container px-4 py-12 md:py-16">
+    <h2 class="mb-2 text-2xl lg:text-4xl font-semibold">Nosotros</h2>
+
+    <div
+      class="grid gap-8 text-lg lg:text-2xl leading-relaxed md:grid-cols-3 md:gap-10"
+    >
+      <p class="md:max-w-[45ch] text-justify">
+        Monarca Camellia surge del interés, la curiosidad y el deseo genuino de
+        emprender.
+      </p>
+
+      <p class="md:col-span-2 text-justify">
+        Nace con la visión de convertirse en una marca global que desarrolla
+        productos que inspiran bienestar, calidad y conexión.
+        <br />
+        Aquí creamos con intención, buscando que cada producto sea una experiencia
+        que acompañe y eleve el bienestar de quienes nos eligen.
+      </p>
+    </div>
+  </div>
+  <div
+    class="absolute z-10 inset-x-0 -bottom-16 flex items-center justify-center"
+  >
+    <Image
+      src={logoAlt}
+      alt="Logo ornamental Monarca Camellia"
+      class="h-auto w-28 md:w-32"
+    />
+  </div>
+</section>
+
+<section
+  class="mission-section relative isolate overflow-hidden bg-background text-white"
+>
+  <div class="container px-4 pb-16 pt-20 md:pb-20 md:pt-24">
+    <h2 class="mb-8 text-center text-2xl lg:text-4xl font-semibold md:mb-10">
+      Nuestra misión y propósito
+    </h2>
+
+    <div class="overflow-hidden border-b-4 border-secondary bg-primary mb-4">
+      <div class="grid md:grid-cols-2">
+        <article class="flex items-center p-8">
+          <div>
+            <h3
+              class="mb-3 border-b-2 border-white/70 pt-3 text-right text-3xl font-semibold"
+            >
+              Misión
+            </h3>
+            <p
+              class="text-right text-lg leading-relaxed md:text-2xl font-light [&>strong]:font-semibold"
+            >
+              Nuestra misión es crear una marca que acompañe a las personas en
+              su día a día, integrando <strong
+                >diseño y significado en cada detalle.</strong
+              >
+            </p>
+          </div>
+        </article>
+
+        <Image
+          src={misionImg}
+          alt="Persona recolectando hojas de té en campo"
+          class="h-full min-h-32 w-full object-cover aspect-video"
+        />
+      </div>
+    </div>
+
+    <div class="overflow-hidden border-b-4 border-secondary bg-primary">
+      <div class="grid md:grid-cols-2">
+        <Image
+          src={propositoImg}
+          alt="Té sirviéndose en una taza de vidrio"
+          class="h-full min-h-64 w-full object-cover aspect-video"
+        />
+
+        <article class="flex items-center p-8 md:p-10">
+          <div>
+            <h3
+              class="mb-3 border-b-2 border-white/70 pt-3 text-3xl font-semibold"
+            >
+              Propósito
+            </h3>
+            <p
+              class="text-lg leading-relaxed md:text-2xl font-light [&>strong]:font-semibold"
+            >
+              Nuestro propósito es ofrecer productos que aporten
+              <strong> bienestar, armonía y experiencias memorables,</strong>
+              siempre desde el respeto al origen de cada ingrediente.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <h3 class="mb-6 mt-10 text-4xl font-semibold">Valores que nos acompañan</h3>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <article
+        class="border-b-4 border-secondary bg-primary p-8 md:p-10 flex flex-col items-center"
+      >
+        <div
+          class="bg-white rounded-full inline-flex size-20 items-center justify-center"
+        >
+          <Image
+            src={calidadIcon}
+            alt="Ícono de calidad"
+            class="mx-auto size-12"
+          />
+        </div>
+        <h4
+          class="mb-4 text-center text-xl lg:text-2xl font-semibold leading-tight"
+        >
+          Calidad responsable y
+          <br />
+          compromiso sostenible
+        </h4>
+        <p
+          class="border-t border-secondary pt-4 text-lg leading-relaxed md:text-xl"
+        >
+          Nos comprometemos a ofrecer <strong>productos de alta calidad</strong
+          >, elaborados con cuidado, transparencia y responsabilidad en cada
+          etapa del proceso.
+          <br /><br />
+          Creemos que la <strong>calidad comienza desde la fuente.</strong>
+        </p>
+      </article>
+
+      <article
+        class="border-b-4 border-secondary bg-primary p-8 md:p-10 flex flex-col items-center"
+      >
+        <div
+          class="bg-white rounded-full inline-flex size-20 items-center justify-center"
+        >
+          <Image
+            src={empatiaIcon}
+            alt="Ícono de empatía"
+            class="mx-auto size-12"
+          />
+        </div>
+        <h4
+          class="mb-4 text-center text-xl lg:text-2xl font-semibold leading-tight"
+        >
+          Empatía y orientación a la
+          <br />
+          persona
+        </h4>
+        <p
+          class="border-t border-secondary pt-4 text-lg leading-relaxed md:text-xl"
+        >
+          Creamos para quienes buscan bienestar real. Escuchamos, comprendemos y
+          diseñamos
+          <strong>experiencias que conectan con las necesidades</strong> de las personas.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style define:vars={{ backgroundImageUrl: `url(${optimazatedImage.src})` }}>
+  .mission-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--backgroundImageUrl);
+    background-position: center;
+    opacity: 0.15;
+    z-index: -1;
+  }
+</style>
