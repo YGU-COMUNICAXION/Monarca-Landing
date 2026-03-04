@@ -40,19 +40,21 @@ const cards = [
     <Image
       src={ulassaLogo}
       alt="Ulassa"
-      class="mx-auto mb-8 h-auto w-full max-w-[220px] md:mb-12 md:max-w-[280px]"
+      class="mx-auto mb-8 h-auto w-full max-w-55 md:mb-12 md:max-w-70"
       loading="lazy"
     />
 
-    <div class="mx-auto max-w-5xl">
-      <h2 class="text-3xl font-semibold md:text-5xl">Conoce nuestros productos</h2>
+    <div class="mx-auto container">
+      <h2 class="text-3xl font-semibold md:text-4xl">
+        Conoce nuestros productos
+      </h2>
 
-      <p class="mt-8 text-lg leading-relaxed md:text-4xl">
-        Monarca Camellia tiene la visión de ofrecer diversas líneas de productos a lo largo del
-        tiempo.
+      <p class="mt-8 text-lg leading-relaxed md:text-2xl">
+        Monarca Camellia tiene la visión de ofrecer diversas líneas de productos
+        a lo largo del tiempo.
         <br />
-        Hoy te damos la bienvenida a descubrir <strong>Ulassa</strong>, nuestra primera colección
-        que incluye:
+        Hoy te damos la bienvenida a descubrir <strong>Ulassa</strong>, nuestra
+        primera colección que incluye:
       </p>
     </div>
 
@@ -63,14 +65,13 @@ const cards = [
             <Image
               src={card.image}
               alt={card.alt}
-              class="h-[360px] w-full object-cover brightness-75 transition duration-300 group-hover:scale-105"
+              class="h-90 w-full object-cover brightness-75 transition duration-300 group-hover:scale-105"
               loading="lazy"
             />
 
             <div class="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
-              <div class:list={["mb-5 rounded-full p-4", card.iconBg]}>
-                <Image src={card.icon} alt="" class="h-8 w-8" loading="lazy" />
-              </div>
+              <Image src={card.icon} alt="" class="size-16" loading="lazy" />
+
               <h3 class="text-3xl font-medium leading-snug">{card.title}</h3>
             </div>
           </article>
@@ -80,7 +81,7 @@ const cards = [
 
     <div class="mt-10 text-center md:mt-12">
       <a
-        href="https://www.ulassa.com.mx/"
+        href="https://www.ulassa.com.mx"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex rounded-full border border-white/80 px-8 py-3 text-sm font-medium tracking-wide text-white transition hover:bg-white hover:text-[#008b69]"
