@@ -1,0 +1,66 @@
+---
+import { getImage } from "astro:assets";
+
+import patronLogo from "@assets/svg/PatronLogo.svg";
+import bgFeatures from "@assets/img/bgFeatures.webp";
+
+const optimizedPattern = await getImage({ src: patronLogo });
+const optimizedBackground = await getImage({ src: bgFeatures });
+---
+
+<section class="bg-white text-background">
+  <div class="mx-auto flex w-full container items-center justify-between gap-8 px-6 py-14 md:py-16 lg:px-12">
+    <div class="">
+      <h2 class="text-3xl font-semibold leading-tight md:text-4xl">
+        ¿Qué hace diferente a Ulassa?
+      </h2>
+      <p class="mt-4 text-xl leading-relaxed md:text-2xl">
+        Ulassa es para quienes no solo quieren tomar té, sino vivir el té.
+      </p>
+    </div>
+
+    <div class="hidden h-64 flex-1 md:block" style={`background-image: url(${optimizedPattern.src}); background-repeat: repeat-x; background-position: -2.3rem ; background-size: 150%;`}></div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="relative isolate overflow-hidden px-6 py-16 md:py-20 lg:px-12"
+  style={`background-image: url(${optimizedBackground.src}); background-size: cover; background-position: center;`}
+>
+  <div class="absolute inset-0 -z-10 bg-black/40"></div>
+
+  <div class="mx-auto grid w-full max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-4">
+    <article class="border-b-8 border-secondary bg-white p-8 text-center text-background md:p-10">
+      <h3 class="text-2xl font-semibold leading-snug">Ingredientes naturales y de alta calidad</h3>
+      <p class="mt-6 text-xl leading-relaxed">
+        Seleccionamos materia prima cuidada desde el origen, respetando las propiedades y
+        <strong>beneficios naturales</strong> de cada ingrediente.
+      </p>
+    </article>
+
+    <article class="border-b-8 border-secondary bg-white p-8 text-center text-background md:p-10">
+      <h3 class="text-2xl font-semibold leading-snug">Combinaciones con propósito y sabor</h3>
+      <p class="mt-6 text-xl leading-relaxed">
+        Cada mezcla está diseñada para ofrecer una <strong>experiencia completa</strong>: buen sabor,
+        beneficios funcionales y momentos de bienestar.
+      </p>
+    </article>
+
+    <article class="border-b-8 border-secondary bg-white p-8 text-center text-background md:p-10">
+      <h3 class="text-2xl font-semibold leading-snug">Experiencia visual y emocional, belleza que inspira</h3>
+      <p class="mt-6 text-xl leading-relaxed">
+        Creemos que “de la vista nace el amor”. <strong>Cuidamos la estética y los detalles</strong>
+        porque el té se aprecia con los ojos, se disfruta con el olfato y <strong>se vive con el alma.</strong>
+      </p>
+    </article>
+
+    <article class="border-b-8 border-secondary bg-white p-8 text-center text-background md:p-10">
+      <h3 class="text-2xl font-semibold leading-snug">Experiencia visual y emocional, belleza que inspira</h3>
+      <p class="mt-6 text-xl leading-relaxed">
+        Ulassa <strong>representa un estilo de vida</strong> que ofrece equilibrio entre
+        <strong>tradición y modernidad</strong>, invitando a vivir con más calma, consciencia y conexión.
+      </p>
+    </article>
+  </div>
+</section>
